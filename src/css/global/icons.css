@@ -28,9 +28,9 @@
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-moon-stars:before {
+.icon-brightness:before {
     content: '\e800';
-}
-.icon-sun:before {
+} /* '' */
+.icon-moon:before {
     content: '\e801';
-}
+} /* '' */

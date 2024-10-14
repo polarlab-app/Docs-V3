@@ -38,12 +38,93 @@ export default function Nav({ params }) {
                         }
                     }}
                 >
-                    <i className={`${styles.toggleIcon} icon-moon-stars ${theme == 'dark' ? styles.active : null}`}></i>
-                    <i className={`${styles.toggleIcon} icon-sun ${theme == 'light' ? styles.active : null}`}></i>
+                    <i className={`${styles.toggleIcon} icon-moon ${theme == 'dark' ? styles.active : null}`}></i>
+                    <i
+                        className={`${styles.toggleIcon} icon-brightness ${theme == 'light' ? styles.active : null}`}
+                    ></i>
                 </div>
             </div>
-            <div className={styles.search}></div>
-            <div className={styles.links}></div>
+            <div className={styles.search}>
+                <input type='string' className={styles.searchInput} placeholder='Search Docs...'></input>
+            </div>
+            <div className={styles.linksWrapper}>
+                <div className={`${styles.linksContainer} ${open.includes('link') ? styles.active : null}`}>
+                    <div
+                        className={styles.mainLink}
+                        onClick={() => {
+                            if (open.includes('link')) {
+                                setOpen(open.filter((item) => item !== 'link'));
+                            } else {
+                                setOpen([...open, 'link']);
+                            }
+                        }}
+                    >
+                        <p className={styles.mainLinkText}>Terms of Service</p>
+                        <i className={`${styles.linkIcon} icon-moon`}></i>
+                    </div>
+                    <ul className={styles.links}>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                    </ul>
+                </div>
+                <div className={`${styles.linksContainer} ${open.includes('link2') ? styles.active : null}`}>
+                    <div
+                        className={styles.mainLink}
+                        onClick={() => {
+                            if (open.includes('link2')) {
+                                setOpen(open.filter((item) => item !== 'link2'));
+                            } else {
+                                setOpen([...open, 'link2']);
+                            }
+                        }}
+                    >
+                        <p className={styles.mainLinkText}>Terms of Service</p>
+                        <i className={`${styles.linkIcon} icon-moon`}></i>
+                    </div>
+                    <ul className={styles.links}>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                        <li className={styles.link}>
+                            <i className={`${styles.linkIcon} icon-moon`}></i>
+                            <p className={styles.linkText}>Terms of Service</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className={styles.support}>
+                <div className={styles.supportLink}>
+                    <i className={`${styles.linkIcon} icon-moon`}></i>
+                    <p className={styles.linkText}>Sign up</p>
+                </div>
+                <div className={styles.supportLink}>
+                    <i className={`${styles.linkIcon} icon-moon`}></i>
+                    <p className={styles.linkText}>Contact Us</p>
+                </div>
+            </div>
         </nav>
     );
 }
