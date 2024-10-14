@@ -1,3 +1,5 @@
+import '@/src/css/global/global.scss';
+
 import '@/src/css/global/icons.css';
 
 export default async function RootLayout({ children }) {

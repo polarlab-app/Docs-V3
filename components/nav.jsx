@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from '@/src/css/docs/nav.module.scss';
 import { useTheme } from './themeProvider';
 
-export default function Nav() {
+export default function Nav({ params }) {
     const [docs, setDocs] = useState(null);
     const { theme, setTheme } = useTheme();
     const [open, setOpen] = useState([]);
@@ -25,7 +25,9 @@ export default function Nav() {
 
     return (
         <nav className={styles.nav}>
-            <div className={styles.navHeader}>
+            <div className={styles.header}>
+                <h1 className={styles.heading}>Polar Lab</h1>
+                <p className={styles.category}>{params.docs[0].toUpperCase()}</p>
                 <div
                     className={styles.toggle}
                     onClick={() => {
@@ -40,6 +42,8 @@ export default function Nav() {
                     <i className={`${styles.toggleIcon} icon-sun ${theme == 'light' ? styles.active : null}`}></i>
                 </div>
             </div>
+            <div className={styles.search}></div>
+            <div className={styles.links}></div>
         </nav>
     );
 }

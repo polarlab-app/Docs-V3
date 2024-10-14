@@ -16,7 +16,7 @@ export default async function PageLayout({ params, children }) {
 
     return (
         <ThemeProvider>
-            <Nav />
+            <Nav params={params} />
             {children}
         </ThemeProvider>
     );
