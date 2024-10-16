@@ -44,8 +44,9 @@ export default function Nav({ params }) {
 	return (
 		<nav className={styles.nav}>
 			<div className={styles.header}>
-				<h1 className={styles.heading}>Polar Lab</h1>
-				<p className={styles.category}>{params.docs[0].toUpperCase()}</p>
+				<h1 className={styles.heading}>{params.docs[1].toUpperCase()}</h1>
+				<hr className={styles.headerDivider}></hr>
+				<p className={styles.category}>Docs</p>
 				<div
 					className={styles.toggle}
 					onClick={() => {

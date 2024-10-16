@@ -9,15 +9,23 @@
 	.header {
 		padding: 24px;
 		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-
+		justify-content: flex-start;
+		align-items: center;
+		gap: 0.7vw;
 		.heading {
 			margin: 0;
 		}
 
 		.category {
+			color: #787879;
+			font-weight: 600;
 			margin: 0;
+		}
+
+		.headerDivider {
+			margin: 0;
+			align-self: normal;
+			border: 1px solid #23252a;
 		}
 
 		.toggle {

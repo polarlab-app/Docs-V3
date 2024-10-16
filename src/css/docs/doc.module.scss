@@ -1,0 +1,20 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 36px;
+	width: calc(100vw - 280px);
+	text-align: left;
+
+	.heading {
+		margin: 0;
+	}
+
+	.headingDivider {
+		border: 4px solid #23252a;
+		border-radius: 6px;
+		width: 10%;
+		margin: 1% 0;
+	}
+}
