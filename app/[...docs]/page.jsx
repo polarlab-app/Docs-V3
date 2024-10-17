@@ -36,10 +36,21 @@ export default function Page({ params }) {
 				elements.push(<hr className={styles.headingDivider}></hr>);
 			} else if (elementType === 'p') {
 				elements.push(<p className={styles.text}>{innerContent}</p>);
+			} else if (elementType == 'h2') {
+				elements.push(<h2 className={styles.subheading}>{innerContent}</h2>);
+			} else if (elementType == 'h2d') {
+				elements.push(<hr className={styles.subheadingDivider}></hr>);
+			} else if (elementType == 'ul') {
+				const listItems = innerContent.split(':').map((item, index) => (
+					<li className={styles.listItem} key={index}>
+						{item}
+					</li>
+				));
+				elements.push(<ul className={styles.list}>{listItems}</ul>);
 			}
 		}
 
-		return elements.length > 0 ? elements : content; // Return elements or original content if no match
+		return elements.length > 0 ? elements : content;
 	};
 
 	return <div className={styles.container}>{document ? parseContent(document.content[0]) : null}</div>;
