@@ -6,10 +6,11 @@
     padding: 60px 120px;
     width: calc(100vw - 770px);
     text-align: left;
-    overflow: scroll;
     height: calc(100% - 120px);
     transition: all 500ms ease;
     background-color: var(--primary-bg);
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     &.dark {
         --primary-color: white;
