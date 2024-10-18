@@ -193,12 +193,16 @@
                 }
             }
 
+            .mainLink .linkIcon {
+                rotate: 90deg;
+            }
+
             &.active {
                 .mainLink {
                     color: var(--primary-color);
 
                     .linkIcon {
-                        rotate: 90deg;
+                        rotate: 180deg;
                     }
                 }
 

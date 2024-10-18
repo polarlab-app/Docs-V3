@@ -33,7 +33,9 @@ export default function Overview({ params }) {
 
     return (
         <div className={`${styles.container} ${styles[theme]}`}>
-            <p className={styles.title}>Page Content</p>
+            <p className={styles.title}>
+                <i className={`icon-align-left ${styles.icon}`}></i>Page Content
+            </p>
             <div className={styles.list}>
                 <div
                     className={styles.slider}

@@ -24,6 +24,10 @@
         color: var(--color-secondary);
         text-align: left;
         font-weight: 600;
+
+        .icon {
+            padding-right: 8px;
+        }
     }
 
     .list {
