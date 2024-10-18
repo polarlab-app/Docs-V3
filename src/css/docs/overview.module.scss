@@ -1,20 +1,87 @@
 .container {
-	width: 250px;
-	padding: 36px;
-	position: relative;
-	height: min-content;
+    width: 250px;
+    padding: 98px 0;
+    transition: all 500ms ease;
+    background-color: var(--primary-bg);
 
-	.border {
-		position: absolute;
-		left: 0;
-		height: calc(100% - 72px);
-		width: 1px;
-		background-color: #23252a;
-	}
+    &.dark {
+        --primary-bg: #08090a;
+        --secondary-bg: white;
+        --border-primary: #23252a;
+        --color-primary: white;
+        --color-secondary: #8a8f8a;
+    }
 
-	.list {
-		padding: 0;
-		list-style: none;
-		text-align: left;
-	}
+    &.light {
+        --primary-bg: white;
+        --secondary-bg: #e9e8ea;
+        --border-primary: #e9e8ea;
+        --color-primary: #282a30;
+        --color-secondary: #6f6e78;
+    }
+
+    .title {
+        color: var(--color-primary);
+    }
+
+    .list {
+        padding: 0;
+        list-style: none;
+        text-align: left;
+        position: relative;
+        padding: 0 18px;
+
+        .border {
+            position: absolute;
+            left: 0;
+            height: calc(100%);
+            width: 2px;
+            background-color: var(--border-primary);
+        }
+
+        .slider {
+            background-color: var(--color-primary);
+            height: 30px;
+            position: absolute;
+            left: 0;
+            width: 2px;
+            z-index: 2;
+            transition: all 600ms ease;
+        }
+
+        .item {
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            transition: all 600ms ease;
+
+            .link {
+                color: var(--color-secondary);
+                font-size: 0.85rem;
+                text-decoration: none;
+                margin: 0;
+                font-weight: 600;
+                transition: all 300ms ease;
+
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+
+            &.active .link {
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+
+.title,
+.list,
+.list .border,
+.list .slider,
+.list .item,
+.list .item .link {
+    transition: all 500ms ease;
 }
