@@ -40,16 +40,16 @@ export default function Nav({ project }) {
         fetchDocs();
     }, [theme]);
 
-    if (!docs) {
-        return 'Loading...';
-    }
-
     return (
         <nav className={styles.nav}>
             <div className={styles.header}>
-                <h1 className={styles.heading}>{params.docs[1].toUpperCase()}</h1>
+                <h1 className={styles.heading} onClick={() => window.location.href(``)}>
+                    {project.charAt(0).toUpperCase() + project.slice(1)}
+                </h1>{' '}
                 <hr className={styles.headerDivider}></hr>
-                <p className={styles.category}>Docs</p>
+                <a className={styles.category} href='/'>
+                    Docs
+                </a>
                 <div
                     className={styles.toggle}
                     onClick={() => {
