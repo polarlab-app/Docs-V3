@@ -9,7 +9,7 @@
         --secondary-bg: white;
         --border-primary: #23252a;
         --color-primary: white;
-        --color-secondary: #8a8f8a;
+        --color-secondary: #8a8f98;
     }
 
     &.light {
@@ -21,7 +21,9 @@
     }
 
     .title {
-        color: var(--color-primary);
+        color: var(--color-secondary);
+        text-align: left;
+        font-weight: 600;
     }
 
     .list {
