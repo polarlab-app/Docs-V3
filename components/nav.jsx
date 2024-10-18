@@ -41,7 +41,7 @@ export default function Nav({ project }) {
     }, [theme]);
 
     return (
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} ${styles[theme]}`}>
             <div className={styles.header}>
                 <h1 className={styles.heading} onClick={() => window.location.href(``)}>
                     {project.charAt(0).toUpperCase() + project.slice(1)}
