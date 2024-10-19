@@ -4,6 +4,7 @@ import { useViewport } from '@/components/viewportProvider';
 import { useState, useEffect, useRef } from 'react';
 import findDoc from '@/lib/findDoc';
 import styles from '@/src/css/docs/doc.module.scss';
+import Image from 'next/image';
 
 export default function Page({ params }) {
     const { theme } = useTheme();
@@ -39,17 +40,18 @@ export default function Page({ params }) {
             },
             { rootMargin: '-50% 0px -50% 0px' }
         );
+        let c = subheadingRefs.current;
 
-        subheadingRefs.current.forEach((ref) => {
+        c.forEach((ref) => {
             if (ref) observer.observe(ref);
         });
 
         return () => {
-            subheadingRefs.current.forEach((ref) => {
+            c.forEach((ref) => {
                 if (ref) observer.unobserve(ref);
             });
         };
-    }, [document]);
+    }, [document, setCurrentView]);
 
     const parseContent = (content) => {
         const regex = /&(\w+);(.*?)&\/\1;/g;
@@ -84,6 +86,18 @@ export default function Page({ params }) {
                     </li>
                 ));
                 elements.push(<ul className={styles.list}>{listItems}</ul>);
+            } else if (elementType == 'img') {
+                elements.push(<Image width={960} height={540} className={styles.image} src={innerContent} alt='img' />);
+            } else if (elementType == 'note') {
+                elements.push(
+                    <div className={styles.note}>
+                        <div className={`${styles.noteHeader} ${styles[innerContent.split(':')[0]]}`}>
+                            <i className={`icon-${innerContent.split(':')[0]} ${styles.noteIcon}`}></i>
+                            <p className={styles.noteHeading}>{innerContent.split(':')[1]}</p>
+                        </div>
+                        <p className={`${styles.noteContent}`}>{innerContent.split(':')[2]}</p>
+                    </div>
+                );
             }
         }
 

@@ -18,6 +18,8 @@
         --primary-border: #23252a;
         --secondary-border: ;
         --primary-bg: #08090a;
+        --secondary-bg: #1c1c1f;
+        --secondary-border: #62666d;
     }
 
     &.light {
@@ -26,6 +28,8 @@
         --primary-border: #e9e8ea;
         --secondary-border: ;
         --primary-bg: white;
+        --secondary-bg: #f9f8f9;
+        --secondary-border: #62666d;
     }
 
     .path {
@@ -56,11 +60,69 @@
         color: var(--secondary-color);
     }
 
+    .list {
+        font-size: 1rem;
+        padding: 0 1rem;
+
+        .listItem {
+            color: var(--secondary-color);
+            margin-bottom: 20%;
+
+            &::marker {
+                color: var(--secondary-border);
+            }
+        }
+    }
+
+    .image {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    .note {
+        width: calc(100% - 36px);
+        padding: 14px;
+        background-color: var(--secondary-bg);
+        border: 1px solid var(--primary-border);
+        display: flex;
+        flex-direction: column;
+        border-radius: 6px;
+        font-size: 0.9rem;
+
+        .noteContent {
+            margin: 0;
+            color: var(--secondary-color);
+        }
+
+        .noteHeader {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-bottom: 8px;
+
+            &.moon {
+                color: #f76f6d;
+            }
+
+            .noteIcon {
+                padding-right: 8px;
+            }
+
+            .noteHeading {
+                text-shadow: 0 0 10px #f76f6d;
+                margin: 0;
+            }
+        }
+    }
+
+    .image,
+    .list,
     .path,
     .subheading,
     .heading,
     .text,
     .headingDivider,
+    .note,
     .subheadingDivider {
         margin: 1% 0;
         transition: all 500ms ease;
