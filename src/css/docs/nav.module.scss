@@ -16,6 +16,7 @@
 .linksWrapper .linksContainer .links .link .linkText,
 .support,
 .support .supportLink,
+.support .supportLink .linkIcon,
 .support .supportLink .linkText {
     transition: all 500ms ease;
 }
@@ -232,17 +233,18 @@
             gap: 0.5vw;
             width: calc(100% - 24px);
             cursor: pointer;
-            transition: all 600ms ease;
-            border-radius: 6px;
             color: var(--tertiary-color);
             font-weight: 600;
 
             .linkText {
                 margin: 0;
                 font-size: 0.9rem;
+                color: var(--tertiary-color);
+                text-decoration: none;
             }
 
-            &:hover {
+            &:hover .linkText,
+            &:hover .linkIcon {
                 color: var(--primary-color);
             }
         }

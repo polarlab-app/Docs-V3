@@ -45,7 +45,7 @@ export default function Nav({ project }) {
             <div className={styles.header}>
                 <h1 className={styles.heading} onClick={() => window.location.href(``)}>
                     {project.charAt(0).toUpperCase() + project.slice(1)}
-                </h1>{' '}
+                </h1>
                 <hr className={styles.headerDivider}></hr>
                 <a className={styles.category} href='/'>
                     Docs
@@ -106,11 +106,15 @@ export default function Nav({ project }) {
             <div className={styles.support}>
                 <div className={styles.supportLink}>
                     <i className={`${styles.linkIcon} icon-moon`}></i>
-                    <p className={styles.linkText}>Sign up</p>
+                    <a className={styles.linkText} href='https://polarlab.app/login'>
+                        Sign up
+                    </a>
                 </div>
                 <div className={styles.supportLink}>
                     <i className={`${styles.linkIcon} icon-envelope`}></i>
-                    <p className={styles.linkText}>Contact Us</p>
+                    <a href='https://polarlab.app/contact' className={styles.linkText}>
+                        Contact Us
+                    </a>
                 </div>
             </div>
         </nav>
