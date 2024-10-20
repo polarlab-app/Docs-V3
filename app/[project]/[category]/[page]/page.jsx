@@ -86,6 +86,13 @@ export default function Page({ params }) {
                     </li>
                 ));
                 elements.push(<ul className={styles.list}>{listItems}</ul>);
+            } else if (elementType == 'ol') {
+                const listItems = innerContent.split(':').map((item, index) => (
+                    <li className={styles.listItem} key={index}>
+                        {item}
+                    </li>
+                ));
+                elements.push(<ol className={styles.list}>{listItems}</ol>);
             } else if (elementType == 'img') {
                 elements.push(<Image width={960} height={540} className={styles.image} src={innerContent} alt='img' />);
             } else if (elementType == 'note') {
