@@ -8,7 +8,7 @@ export default async (phase, { defaultConfig }) => {
         experimental: {
             missingSuspenseWithCSRBailout: false,
             serverActions: {
-                allowedOrigins: ['https://docs.polarlab.app', 'docs.polarlab.app', '172.99.0.7:3001'],
+                allowedOrigins: ['https://docs2.polarlab.app', 'docs2.polarlab.app', '172.99.0.7:3001'],
             },
         },
         images: {
